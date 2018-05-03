@@ -101,7 +101,7 @@ class ViewController: NSViewController{
     
         let date2 = endDate.dateValue
        
-//tempt.select(tempt[*], time.distinct.count).group(time).filter(date1...date2 ~= time)
+
         for tempts in try! db.prepare(tempt.select(tempt[*], temperature.max).group(time).filter(date1...date2 ~= time)){
             let timeDate1 = dateFormatter.string(from: tempts[time])
             let timedate2 = StrToInt(str: timeDate1)
